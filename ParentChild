@@ -1,0 +1,43 @@
+package com.kh.poly.Homework;
+
+public class Parent {
+	protected int num;
+	
+	public void display() {
+		System.out.println("부모메소드");
+	}
+}
+package com.kh.poly.Homework;
+
+public class Child extends Parent{
+	private int x=100;
+	
+	public Child() {}
+	
+	public void out() {
+		System.out.println("부모의 protected num : "+num);
+		System.out.println("자식메소드");
+	}
+	
+	@Override
+	public void display() {
+		System.out.println("오버라이딩 된 메소드");
+	}
+}
+package com.kh.poly.Homework;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Child c = new Child();
+		c.display();
+		c.out();
+		System.out.println();
+		
+		Parent p = new Child();
+		p.display();
+		/*((Child) p).out();*/
+
+	}
+
+}
